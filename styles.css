@@ -1,0 +1,101 @@
+body {
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/*Optimised Classes*/
+.resizeContent {
+  width: 400px; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.shadowSpan span {
+  text-shadow: 2px 2px 8px #fff;
+}
+
+.hoverScale:hover { 
+    transform: scale(1.15);
+}
+
+.timeTransform {
+    transition: transform 1.13s;
+}
+
+.BRW {
+    font-family:"BariolRegularFont", sans-serif;
+}
+
+/*End of optimised classes*/
+
+#particles-js {
+	width: 100%;
+	height: 100%;
+	background: black; 
+	position: fixed;
+}
+
+#container {
+	color: white;
+	position: relative;
+}
+
+#container h1 {
+	font-size: 85px;
+}
+
+#container h2 {
+	font-size: 65px; 
+	text-align: center;
+}
+
+#container iframe {
+	width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.progress-value {
+  animation: load 1s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@font-face {
+  font-family: "BariolRegularFont";
+  src: url("fonts/bariol_regular-webfont.eot");
+  src: url("fonts/bariol_regular-webfont.woff") format("woff"),
+  url("fonts/bariol_regular-webfont.otf") format("opentype"),
+  url("fonts/bariol_regular-webfont.svg#filename") format("svg");
+}
