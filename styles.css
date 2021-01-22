@@ -1,3 +1,7 @@
+* {
+  font-family:"BariolRegularFont", sans-serif;
+}
+
 body {
   justify-content: center;
   align-items: center;
@@ -32,11 +36,6 @@ body {
 .timeTransform {
     transition: transform 1.13s;
 }
-
-.BRW {
-    font-family:"BariolRegularFont", sans-serif;
-}
-
 /*End of optimised classes*/
 
 #particles-js {
