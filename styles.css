@@ -2,6 +2,10 @@
   font-family:"BariolRegularFont", sans-serif;
 }
 
+* span {
+  text-shadow: 2px 2px 8px #fff;
+}
+
 body {
   justify-content: center;
   align-items: center;
@@ -23,10 +27,6 @@ body {
   width: 400px; 
   margin-left: auto; 
   margin-right: auto;
-}
-
-.shadowSpan span {
-  text-shadow: 2px 2px 8px #fff;
 }
 
 .hoverScale:hover { 
