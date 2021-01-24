@@ -2,7 +2,7 @@
   font-family:"BariolRegularFont", sans-serif;
 }
 
-* span {
+.shadowSpan span {
   text-shadow: 2px 2px 8px #fff;
 }
 
@@ -38,11 +38,9 @@ body {
 }
 /*End of optimised classes*/
 
-#particles-js {
-	width: 100%;
-	height: 100%;
-	background: black; 
-	position: fixed;
+#falling-js {
+  background-color: black;
+  position: absolute;
 }
 
 #container {

@@ -6,4 +6,3 @@ $('.linkToBot').on( 'click', function(event) {
 		alert('Please allow popups for this website');
 	}
 });
-
