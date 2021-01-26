@@ -1,5 +1,6 @@
 * {
   font-family:"BariolRegularFont", sans-serif;
+  transition: transform 1.13s;
 }
 
 .shadowSpan span {
@@ -31,10 +32,6 @@ body {
 
 .hoverScale:hover { 
     transform: scale(1.15);
-}
-
-.timeTransform {
-    transition: transform 1.13s;
 }
 /*End of optimised classes*/
 
