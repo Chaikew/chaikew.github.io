@@ -162,18 +162,18 @@ function createRenderTarget(w, h) {
 }
 
 function compileShader(shtype, shsrc) {
-  var retsh = gl.createShader(shtype);
-  
-  gl.shaderSource(retsh, shsrc);
-  gl.compileShader(retsh);
-  
-  if(!gl.getShaderParameter(retsh, gl.COMPILE_STATUS)) {
-    var errlog = gl.getShaderInfoLog(retsh);
-    gl.deleteShader(retsh);
-    console.error(errlog);
-    return null;
-  }
-  return retsh;
+	var retsh = gl.createShader(shtype);
+	
+	gl.shaderSource(retsh, shsrc);
+	gl.compileShader(retsh);
+	
+	if(!gl.getShaderParameter(retsh, gl.COMPILE_STATUS)) {
+		var errlog = gl.getShaderInfoLog(retsh);
+		gl.deleteShader(retsh);
+		console.error(errlog);
+		return null;
+	}
+	return retsh;
 }
 
 function createShader(vtxsrc, frgsrc, uniformlist, attrlist) {
@@ -767,11 +767,11 @@ function animate() {
 
 function makeCanvasFullScreen(canvas) {
     var b = document.body;
-  var d = document.documentElement;
-  fullw = Math.max(b.clientWidth , b.scrollWidth, d.scrollWidth, d.clientWidth);
-  fullh = Math.max(b.clientHeight , b.scrollHeight, d.scrollHeight, d.clientHeight);
-  canvas.width = fullw;
-  canvas.height = fullh;
+	var d = document.documentElement;
+	fullw = Math.max(b.clientWidth , b.scrollWidth, d.scrollWidth, d.clientWidth);
+	fullh = Math.max(b.clientHeight , b.scrollHeight, d.scrollHeight, d.clientHeight);
+	canvas.width = fullw;
+	canvas.height = fullh;
 }
 
 window.addEventListener('load', function(e) {
@@ -800,4 +800,3 @@ window.addEventListener('load', function(e) {
 (function (w, r) {
     w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
 })(window, 'equestAnimationFrame');
-

@@ -19,17 +19,10 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-/*Optimised Classes*/
-.resizeContent {
-  width: 400px; 
-  margin-left: auto; 
-  margin-right: auto;
-}
 
 .hoverScale:hover { 
     transform: scale(1.15) translate(20px, -2.45vh);
 }
-/*End of optimised classes*/
 
 #container {
 	color: white;
@@ -43,13 +36,6 @@ body {
 #container h2 {
 	font-size: 60px; 
   text-align: center;
-}
-
-#container iframe {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 
 @font-face {
