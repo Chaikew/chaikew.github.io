@@ -1,6 +1,7 @@
 * {
   font-family:"BariolRegularFont", sans-serif;
   transition: transform 1.13s;
+  text-align: center;
 }
 
 body {
