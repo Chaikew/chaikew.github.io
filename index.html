@@ -2,12 +2,14 @@
 <html lang="en">
   
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=">
-<title>JMRaichDev - OxO</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JMRaichDev - OxO</title>
 </head>
 
 <body>
+  <div id="background"></div>
+
   <style>
       @import url('https://fonts.googleapis.com/css?family=Montserrat:100');
 
@@ -55,6 +57,7 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
+        transition: transform 0.8s;
       }
 
       .button {
@@ -114,6 +117,32 @@
       #tos a:hover {
         opacity: 1
       }
+
+      #body{
+        animation: zoom 1.40s;
+      }
+
+      @keyframes zoom {
+        0%   { transform:scale(.2); }
+        100% { transform:scale(1);  }
+      }
+
+      #background {
+        background: url("/background.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        
+        filter: blur(3px);
+      }      
   </style>
   <main>
     <div id="body">
@@ -124,6 +153,7 @@
           I'm learning JavaByteCode and Assembly</p>   
         </div>
         <div>
+          <br>
           <h2>Contact me :
           </h2>
           <div class="button">
