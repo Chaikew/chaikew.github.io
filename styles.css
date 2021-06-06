@@ -6,7 +6,7 @@
   -ms-user-select: none;
 }
 
-.progress {
+#progress {
   background: rgba(255,255,255,0.1);
   justify-content: flex-start;
   border-radius: 100px;
@@ -21,7 +21,7 @@
   transform: translate(-50%, -50%);
 }
 
-.progress-value {
+#progress-value {
   animation: load 1.20s normal forwards;
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 100px;
@@ -31,7 +31,6 @@
 }
 
 body {
-  background: url("/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -163,6 +162,21 @@ main {
   top: 0;
   left: 0;
   z-index: -1;
+}
 
-  filter: blur(3px);
+
+
+.rainbow {
+  background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+  text-align: center;
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 16s ease infinite;
+}
+
+@keyframes rainbow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 25%}
+    100%{background-position:0% 50%}
 }
