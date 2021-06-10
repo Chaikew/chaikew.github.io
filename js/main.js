@@ -20,9 +20,7 @@ $(document).ready(function(){
   document.querySelector('#progress-value').addEventListener("animationend", function end(){ // Listener : "end of progress-bar animation"
     container.removeChild(progress_bar_div); // Destoy progress-bar-div element
     $("#body").show();
-  });
 
-  document.querySelector('#body').addEventListener("animationend", function end(){ // Listener : "end of progress-bar animation"
     var target_glicthes = document.getElementsByClassName('glitch')
     for (i = 0; i < target_glicthes.length; i++) {
       glitch_instances[i] = new Glitch(target_glicthes[i]);

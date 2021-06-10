@@ -134,15 +134,6 @@ main {
   opacity: 1
 }
 
-#body{
-  animation: zoom 1.40s;
-}
-
-@keyframes zoom {
-  0%   { transform:scale(0.2) rotate(0deg); filter: blur(75px); }
-  100% { transform:scale(1.0) rotate(360deg); filter: blur(0px); }
-}
-
 @keyframes load {
   0% { width: 0; }
   100% { width: 100%;}
