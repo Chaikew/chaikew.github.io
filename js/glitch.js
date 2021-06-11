@@ -48,3 +48,10 @@ function start_glitch() {
     console.log("[EVENT] Glitch Annimation End");
   }
 }
+
+function setup_glitch() {
+  var target_glicthes = document.getElementsByClassName('glitch')
+  for (i = 0; i < target_glicthes.length; i++) {
+    glitch_instances[i] = new Glitch(target_glicthes[i]);
+  }
+}
