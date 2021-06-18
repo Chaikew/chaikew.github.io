@@ -1,19 +1,29 @@
+document.onready = function (fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
+
 function randomIntFromInterval(min, max) { // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function updateCSS() {
-  $('#progress').css('width', (window.innerWidth < 900 ? "90vw" : "45vw")); //responsive sizing
+  document.getElementById("progress").style.width = (window.innerWidth < 900 ? "90vw" : "500px"); //responsive sizing
 }
 
-$(document).ready(function(){
+document.onready(function(){
   updateCSS();
-  $("#body").hide();
+  document.getElementById("body").style.visibility = "hidden";
 
   //Standard syntax
   document.querySelector('#progress-value').addEventListener("animationend", function end(){ // Listener : "end of progress-bar animation"
-    $('#progress').css('visibility', 'hidden'); // Destoy progress-bar-div element
-    $("#body").show();
+    document.getElementById("progress").style.visibility = "hidden"; // Destoy progress-bar-div element
+    document.getElementById("body").style.visibility = "visible"
     setup_glitch();
     start_glitch();
   });
