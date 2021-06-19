@@ -1,5 +1,4 @@
 const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" +
     "ʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ ̣ ⚍⍊∴ ̇/||⨅" +
     "阿贝色德饿艾弗日阿什伊鸡卡艾勒艾马艾娜哦佩苦艾和艾丝特玉维独布勒维伊克斯伊格黑克贼德" +
     "ஹஸಳ್௮ಆಕ್ಷ್ఋனಠ್ಳ್பமஉஊఊௌொஇ௲ூஃஊஏஐஒஓஔஜஞిಔృూ" +
