@@ -1,24 +1,24 @@
-document.onready = function (fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
+function checkIE() {
+    var isIE = /MSIE|Triden/.test(navigator.userAgent);
+    if (isIE) {
+        var doc = document.getElementsByTagName("html")[0];
+        doc.getElementsByTagName("head")[0].innerHTML = "<title>Oops</title>";
+        doc.getElementsByTagName("body")[0].innerHTML = "<p>IE is not supported !!!<br>Please upgrade your browser !</p>";
     }
-};
-
-function randomIntFromInterval(min, max) {
-    // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function updateCSS() {
-    _("#progress").style.width = window.innerWidth < 500 ? "90vw" : "500px"; //responsive sizing
+function patchCSS() {
+    function updateCSS() {
+        _("#progress").style.width = window.innerWidth < 500 ? "90vw" : "500px"; //responsive sizing
+    }
+    updateCSS();
+    
+    window.addEventListener("resize", updateCSS, false);
 }
 
 document.onready(function () {
-    updateCSS();
+    checkIE();
+    patchCSS();
     _("#body").style.visibility = "hidden";
 
     //Standard syntax

@@ -55,7 +55,7 @@ function start_glitch() {
     }
 }
 
-function forceStop() {
+function stop_glitch() {
     for (i = 0; i < glitch_instances.length; i++) {
         glitch_instances[i].glitch.element.innerHTML = glitch_instances[i].glitch.text;
         glitch_instances[i].glitch.running = false;
