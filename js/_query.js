@@ -17,3 +17,7 @@ function _(disc) {
         }
     }
 }
+
+HTMLElement.prototype.css = function(property, new_value) {
+    this.style[property] = new_value;
+}
