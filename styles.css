@@ -46,11 +46,11 @@ body {
 
 main {
   margin: auto auto;
-  width: 500px;
   position: relative;
   top: 50%;
   text-align: center;
   transform: translateY(-50%);
+  box-sizing: content-box;
 }
 
 #header {
@@ -102,12 +102,13 @@ main {
   opacity: 0.9
 }
 
-#tos {
+#tos *{
   color: #FFB644;
   fill: #FFB644;
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  text-decoration: none;
 }
 
 #content a:hover {
@@ -153,4 +154,74 @@ main {
     0%{background-position:0% 50%}
     50%{background-position:100% 25%}
     100%{background-position:0% 50%}
+}
+
+@media (min-width: 501px) {
+    main {
+        max-width: 500px;
+    }
+
+    #progress {
+        width: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        max-width: 300px;
+    }
+
+    #progress {
+        width: 90vw;
+    }
+}
+
+
+/* Left side-bar menu */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size:4vh;
+  cursor:pointer;
+  position:absolute;
+  top:1vh;
+  left:1vw;
+  color:red;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

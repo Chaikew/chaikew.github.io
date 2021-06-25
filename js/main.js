@@ -13,7 +13,7 @@ function checkIp() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "http://httpbin.org/ip");
     xhr.send();
-    xhr.onload = function () {
+    xhr.onload = function() {
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200) {
                 var md5Hash = MD5(JSON.parse(xhr.responseText).origin.toString());
@@ -31,20 +31,35 @@ function checkIp() {
     };
 }
 
-
-function patchCSS() {
-    function updateCSS() {
-        _("#progress").css("width", window.innerWidth < 500 ? "90vw" : "500px"); //responsive sizing
+function checkIframe() {
+    var isInIframe;
+    try {
+        isInIframe = (window.self !== window.top);
+    } catch (e) {
+        isInIframe = true;
     }
-    updateCSS();
+    if (isInIframe) {
+        document.open();
+        document.close();
 
-    window.addEventListener("resize", updateCSS, false);
+        document.title = "Error"
+        document.body.innerHTML = "<p>[SECURITY] Page loaded in IFRAME<br>[SECURITY] Don't trust anything here !</p>";
+    }
+}
+
+/* Functions to handle Left-Side menu */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "260px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
 }
 
 document.onready(function() {
     checkIE();
+    checkIframe();
     checkIp();
-    patchCSS();
     _("#body").css("visibility", "hidden");
 
     //Standard syntax
