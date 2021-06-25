@@ -11,7 +11,7 @@ function checkIE() {
 
 function checkIp() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://httpbin.org/ip");
+    xhr.open("GET", "https://httpbin.org/ip");
     xhr.send();
     xhr.onload = function() {
         if (xhr.readyState === xhr.DONE) {
