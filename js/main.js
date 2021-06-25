@@ -49,11 +49,11 @@ function checkIframe() {
 
 /* Functions to handle Left-Side menu */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "260px";
+    document.getElementById("sidenavMenu").style.width = "260px";
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("sidenavMenu").style.width = "0";
 }
 
 document.onready(function() {
