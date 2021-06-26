@@ -10,7 +10,7 @@
       <groupId>io.earcam.wrapped</groupId>
       <artifactId>com.sun.tools.attach</artifactId>
       <version>1.8.0_jdk8u172-b11</version>
-      <scope>runtime</scope>
+      <scope>import</scope>
     </dependency>
   </dependencies>
 </project>
