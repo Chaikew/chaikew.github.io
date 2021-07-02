@@ -60,7 +60,7 @@ main {
 }
 
 /* =============== Side Naviagtion Menu ===============*/
-.sideNav {
+#sideNavMenu {
   height: 100%;
   width: 0;
   position: fixed;
@@ -73,7 +73,7 @@ main {
   padding-top: 60px;
 }
 
-.sideNav a {
+#sideNavMenu a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -82,11 +82,11 @@ main {
   transition: 0.3s;
 }
 
-.sideNav a:hover {
+#sideNavMenu a:hover {
   color: #f1f1f1;
 }
 
-.sideNav .closebtn {
+#closeNavBtn {
   position: absolute;
   top: 0;
   right: 25px;
@@ -94,7 +94,7 @@ main {
   margin-left: 50px;
 }
 
-.openbtn {
+#openNavBtn {
   font-size:4vh;
   cursor:pointer;
   position:absolute;

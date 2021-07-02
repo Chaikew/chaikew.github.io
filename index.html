@@ -3,6 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--=========== Preview meta datas ===============-->
         <link rel="icon" href="./favicon.ico">
         <meta property="og:title" content="JMRaichDev's Website !">
         <meta property="og:url" content="http://jmraich.tk/">
@@ -39,19 +41,19 @@
                         I'm a partial time french developper, I can code things in Java, Python, HTML, JavaScript, CSS.<br/>
                         I'm learning JavaByteCode and Assembly
                     </p>
+                    <a id="tos" class="glitch">JMRaichDev - All rights reserved</a>
+                    <br/>
                 </div>
-                <a id="tos" class="glitch">JMRaichDev - All rights reserved</a>
-                <br/>
             </div>
         </main>
 
         <!--=========== Side Navigation Menu ===============-->
-        <div id="sideNavMenu" class="sideNav">
-            <a href="javascript:void(0)" class="closebtn" onclick="updateNav()">&times;</a>
+        <div id="sideNavMenu">
+            <a href="javascript:void(0)" id="closeNavBtn" onclick="updateNav()">&times;</a>
             <a href="./maven/">Maven Repo</a>
             <a href="https://bubble.jmraich.tk/">bubble.jmraich.tk</a>
         </div>
-        <span class="openbtn" onclick="updateNav()">&#9776;</span>
+        <span id="openNavBtn" onclick="updateNav()">&#9776;</span>
 
         <!--=========== Progress bar ===============-->
         <div id="progress">
