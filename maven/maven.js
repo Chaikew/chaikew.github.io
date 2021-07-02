@@ -1,32 +1,31 @@
 String.prototype.removeLast = function (text) {
-    let origin = this;
     textLenght = text.length;
-    originLen = origin.length;
-    if (textLenght == 0) return origin;
+    originLen = this.length;
+    if (textLenght == 0) return this;
 
     start = originLen - textLenght;
     if (start < 0) {
-        return origin;
+        return this;
     }
     if (start == 0) {
         return "";
     }
     for (i = start; i >= 0; i--) {
         k = 0;
-        while (origin[i + k] == text[k]) {
+        while (this[i + k] == text[k]) {
             k++;
             if (k == textLenght) break;
         }
         if (k == textLenght) break;
     }
     //not founded
-    if (k != textLenght) return origin;
+    if (k != textLenght) return this;
 
     //founded and i starts on correct and i+k is the first char after
-    end = origin.substring(i + k, originLen);
+    end = this.substring(i + k, originLen);
     if (i == 0) return end;
     else {
-        start = origin.substring(0, i);
+        start = this.substring(0, i);
         return start + end;
     }
 };
@@ -43,6 +42,12 @@ const avaible_paths = {
                       "venomAgent-0.1-sources.jar",
                       "venomAgent-0.1.jar",
                       "venomAgent-0.1.pom"
+                    ],
+                    "0.2": [
+                      "venomAgent-0.2-javadoc.jar",
+                      "venomAgent-0.2-sources.jar",
+                      "venomAgent-0.2.jar",
+                      "venomAgent-0.2.pom"
                     ]
                 }
             }
@@ -68,9 +73,7 @@ function updateElements() {
 
     if (dirs.length) {
         // if its iterable, it means there are jar/pom files
-        for (i = 0; i < dirs.length; i++) {
-            let dir = dirs[i];
-
+        for (const dir of dirs) {
             var link = document.createElement("LI");
             link.className = count % 2 === 0 ? "dark" : "light";
 

@@ -6,6 +6,7 @@
   -ms-user-select: none;
 }
 
+/* Progress-bar */
 #progress {
   background: rgba(255,255,255,0.1);
   justify-content: flex-start;
@@ -28,6 +29,11 @@
   background: #fff;
   height: 30px;
   width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%;}
 }
 
 body {
@@ -135,12 +141,8 @@ main {
   opacity: 1
 }
 
-@keyframes load {
-  0% { width: 0; }
-  100% { width: 100%;}
-}
 
-
+/* Rainbow text effect */
 .rainbow {
   background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
   text-align: center;
@@ -156,7 +158,8 @@ main {
     100%{background-position:0% 50%}
 }
 
-@media (min-width: 501px) {
+/* Responive part */
+@media (min-width: 500px) {
     main {
         max-width: 500px;
     }

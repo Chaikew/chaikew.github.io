@@ -1,9 +1,7 @@
 const chars =
-    "ʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ ̣ ⚍⍊∴ ̇/||⨅" +
-    "阿贝色德饿艾弗日阿什伊鸡卡艾勒艾马艾娜哦佩苦艾和艾丝特玉维独布勒维伊克斯伊格黑克贼德" +
-    "ஹஸಳ್௮ಆಕ್ಷ್ఋனಠ್ಳ್பமஉஊఊௌொஇ௲ூஃஊஏஐஒஓஔஜஞిಔృూ" +
-    "ప௯௮ிஞஜಋౡౠౖಱಯಮಭಬあかさたなはまやらわがざだtばぱおこそとのほもよろをんごぞどぼぽ" +
-    "αβγδεζηθικλμνξοπρστυφχψωABΓ∆EZHΘIKΛMNΞOΠPΣTΥΦXΨ".split("");
+    "阿贝色德饿艾弗日什伊鸡卡勒马娜哦佩苦和丝特玉维独布克斯格黑贼" +
+    "ஹஸಳ್௮ಆಕಷఋனಠபமஉஊఊௌொஇ௲ூஃஏஐஒஓஔஜஞిಔృూ" +
+    "ప௯௮ிஞஜಋౡౠౖಱಯಮಭಬあかさたなはまやらわがざだtばぱおこそとのほもよろをんごぞどぼぽ".split("");
 
 var glitch_instances = [];
 class Glitch {
@@ -18,7 +16,7 @@ class Glitch {
             glitch: function () {
                 if (!(this.progress >= this.len)) {
                     var randomNums = Math.floor(Math.random() * chars.length);
-                    if (randomIntFromInterval(0, randomIntFromInterval(8, 13)) == 1) {
+                    if (randomIntFromInterval(0, randomIntFromInterval(3, 5)) == 1) {
                         this.output += this.text[this.progress];
                         this.element.innerHTML = `${this.output}`;
                         this.progress++;
@@ -40,6 +38,8 @@ function setup_glitch() {
     }
 }
 
+
+// TODO: optimization
 function start_glitch() {
     for (i = 0; i < glitch_instances.length; i++) {
         if (glitch_instances[i].glitch.running) {
@@ -56,8 +56,8 @@ function start_glitch() {
 }
 
 function stop_glitch() {
-    for (i = 0; i < glitch_instances.length; i++) {
-        glitch_instances[i].glitch.element.innerHTML = glitch_instances[i].glitch.text;
-        glitch_instances[i].glitch.running = false;
+    for (const glitch_instance of glitch_instances) {
+        glitch_instance.glitch.element.innerHTML = glitch_instances.glitch.text;
+        glitch_instance.glitch.running = false;
     }
 }
