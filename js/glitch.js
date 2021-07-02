@@ -57,7 +57,7 @@ function start_glitch() {
 
 function stop_glitch() {
     for (const glitch_instance of glitch_instances) {
-        glitch_instance.glitch.element.innerHTML = glitch_instances.glitch.text;
+        glitch_instance.glitch.element.innerHTML = glitch_instance.glitch.text;
         glitch_instance.glitch.running = false;
     }
 }
