@@ -11,24 +11,24 @@ function checkIE() {
 
 /* Function to handle Left-Side menu */
 function updateNav() {
-    let sidenavMenu =  _("#sidenavMenu");
-    if (sidenavMenu.style.width == "260px") {
-        sidenavMenu.css("width", "0px");
+    let sideNavMenu =  document.getElementById("sideNavMenu");
+    if (sideNavMenu.style.width == "260px") {
+        sideNavMenu.style.width = "0px";
     } else {
-        sidenavMenu.css("width", "260px");
+        sideNavMenu.style.width = "260px";
     }
 }
 
 document.onready(function() {
     checkIE();
-    _("#body").css("visibility", "hidden");
+    document.getElementById("body").style.visibility = "hidden";
 
     //Standard syntax
     // Listener : "end of progress-bar animation"
-    _("#progress-value").addEventListener("animationend", function end() {
+    document.getElementById("progress-value").addEventListener("animationend", function end() {
         // Hide progress-bar div element
-        _("#progress").css("visibility", "hidden");
-        _("#body").css("visibility", "visible");
+        document.getElementById("progress").style.visibility = "hidden";
+        document.getElementById("body").style.visibility = "visible";
         setup_glitch();
         start_glitch();
     });

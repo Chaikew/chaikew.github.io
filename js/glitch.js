@@ -32,7 +32,7 @@ class Glitch {
 }
 
 function setup_glitch() {
-    var target_glicthes = _(".glitch");
+    var target_glicthes = document.getElementsByClassName("glitch");
     for (i = 0; i < target_glicthes.length; i++) {
         glitch_instances[i] = new Glitch(target_glicthes[i]);
     }
