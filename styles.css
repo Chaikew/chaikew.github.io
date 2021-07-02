@@ -1,41 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
-
 * {
-  user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-/* Progress-bar */
-#progress {
-  background: rgba(255,255,255,0.1);
-  justify-content: flex-start;
-  border-radius: 100px;
-  align-items: center;
-  position: absolute;
-  padding: 0 5px;
-  display: flex;
-  height: 40px;
-  width: 500px;
-  margin: auto auto;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#progress-value {
-  animation: load 1.20s normal forwards;
-  box-shadow: 0 10px 40px -10px #fff;
-  border-radius: 100px;
-  background: #fff;
-  height: 30px;
-  width: 0;
-}
-
-@keyframes load {
-  0% { width: 0; }
-  100% { width: 100%;}
-}
-
+/* =============== BODY (body) ===============*/
 body {
   background: url("./background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -50,6 +20,7 @@ body {
   overflow: hidden;
 }
 
+/* =============== Main ===============*/
 main {
   margin: auto auto;
   position: relative;
@@ -59,18 +30,7 @@ main {
   box-sizing: content-box;
 }
 
-#header {
-  background: transparent;
-  padding: 2rem;
-}
-
-#header img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto;
-  display: block;
-}
-
+/* =============== Body (div) ===============*/
 #body {
   background: #262626E6;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
@@ -82,15 +42,7 @@ main {
   border-bottom-right-radius: 10px;
 }
 
-.button {
-  display: flex;
-  justify-content: space-between
-}
-
-.button a {
-  width: 100%
-}
-
+/* =============== Content ===============*/
 #content a {
   align-items: center;
   text-decoration: none;
@@ -108,31 +60,39 @@ main {
   opacity: 0.9
 }
 
-#tos *{
-  color: #FFB644;
-  fill: #FFB644;
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  text-decoration: none;
-}
-
 #content a:hover {
   opacity: 1
 }
 
+/* =============== Discord Button ===============*/
 #content a.discord {
   background-image: linear-gradient(145deg, #7289DA 0%, #7289DA 100%);
 }
 
-.button a svg {
+.discordBtn {
+  display: flex;
+  justify-content: space-between
+}
+
+.discordBtn a {
+  width: 100%
+}
+
+.discordBtn a svg {
   fill: white;
   color: white;
   width: 1.3rem;
   margin-right: 0.4rem;
 }
 
+/* =============== Tos ===============*/
 #tos a {
+  color: #FFB644;
+  fill: #FFB644;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  text-decoration: none;
   opacity: 0.7;
   transition: color .05s, background-color .2s, background-image .2s, top .2s, left .2s, height .2s, opacity .2s, margin .2s;
 }
@@ -141,45 +101,7 @@ main {
   opacity: 1
 }
 
-
-/* Rainbow text effect */
-.rainbow {
-  background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
-  text-align: center;
-  background-size: 800% 800%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbow 16s ease infinite;
-}
-
-@keyframes rainbow {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 25%}
-    100%{background-position:0% 50%}
-}
-
-/* Responive part */
-@media (min-width: 500px) {
-    main {
-        max-width: 500px;
-    }
-
-    #progress {
-        width: 500px;
-    }
-}
-
-@media (max-width: 500px) {
-    main {
-        max-width: 300px;
-    }
-
-    #progress {
-        width: 90vw;
-    }
-}
-
-/* Left side-bar menu */
+/* =============== Side Naviagtion Menu ===============*/
 .sideNav {
   height: 100%;
   width: 0;
@@ -221,6 +143,74 @@ main {
   top:1vh;
   left:1vw;
   color:red;
+}
+
+
+/* =============== PROGRESS-BAR (div) ===============*/
+#progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: absolute;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+  margin: auto auto;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#progress-value {
+  animation: load 1.20s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%;}
+}
+
+/* =============== Rainbow Effect ===============*/
+.rainbow {
+  background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+  text-align: center;
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 16s ease infinite;
+}
+
+@keyframes rainbow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 25%}
+    100%{background-position:0% 50%}
+}
+
+/* =============== Responsive ===============*/
+@media (min-width: 500px) {
+    main {
+        max-width: 500px;
+    }
+
+    #progress {
+        width: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        max-width: 300px;
+    }
+
+    #progress {
+        width: 90vw;
+    }
 }
 
 @media screen and (max-height: 450px) {

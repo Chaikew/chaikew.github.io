@@ -4,7 +4,7 @@ function checkIE() {
         document.open();
         document.close();
 
-        top.document.title = "Oops"
+        top.document.title = "Oops";
         top.document.body.innerHTML = "<p>IE is not supported !!!<br>Please upgrade your browser !</p>";
     }
 }
