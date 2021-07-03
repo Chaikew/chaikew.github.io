@@ -3,7 +3,7 @@ const chars =
     "ஹஸಳ್௮ಆಕಷఋனಠபமஉஊఊௌொஇ௲ூஃஏஐஒஓஔஜஞిಔృూ" +
     "ప௯௮ிஞஜಋౡౠౖಱಯಮಭಬあかさたなはまやらわがざだtばぱおこそとのほもよろをんごぞどぼぽ".split("");
 
-var glitch_instances = [];
+const glitch_instances = [];
 class Glitch {
     constructor(element) {
         this.glitch = {
@@ -15,8 +15,8 @@ class Glitch {
             running: true,
             glitch: function () {
                 if (!(this.progress >= this.len)) {
-                    var randomNums = Math.floor(Math.random() * chars.length);
-                    if (randomIntFromInterval(0, randomIntFromInterval(3, 5)) == 1) {
+                    let randomNums = Math.floor(Math.random() * chars.length);
+                    if (randomIntFromInterval(0, randomIntFromInterval(3, 5)) === 1) {
                         this.output += this.text[this.progress];
                         this.element.innerHTML = `${this.output}`;
                         this.progress++;
@@ -32,16 +32,16 @@ class Glitch {
 }
 
 function setup_glitch() {
-    var target_glicthes = document.getElementsByClassName("glitch");
-    for (i = 0; i < target_glicthes.length; i++) {
-        glitch_instances[i] = new Glitch(target_glicthes[i]);
+    let target_glitches = document.getElementsByClassName("glitch");
+    for (let i = 0; i < target_glitches.length; i++) {
+        glitch_instances[i] = new Glitch(target_glitches[i]);
     }
 }
 
 
 // TODO: optimization
 function start_glitch() {
-    for (i = 0; i < glitch_instances.length; i++) {
+    for (let i = 0; i < glitch_instances.length; i++) {
         if (glitch_instances[i].glitch.running) {
             glitch_instances[i].glitch.glitch();
         } else {

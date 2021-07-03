@@ -1,5 +1,5 @@
 function checkIE() {
-    var isIE = /MSIE|Triden/.test(navigator.userAgent);
+    let isIE = /MSIE|Triden/.test(navigator.userAgent);
     if (isIE) {
         document.open();
         document.close();
@@ -12,7 +12,7 @@ function checkIE() {
 /* Function to handle Left-Side menu */
 function updateNav() {
     let sideNavMenu =  document.getElementById("sideNavMenu");
-    if (sideNavMenu.style.width == "260px") {
+    if (sideNavMenu.style.width === "260px") {
         sideNavMenu.style.width = "0px";
     } else {
         sideNavMenu.style.width = "260px";
@@ -28,7 +28,11 @@ document.onready(function() {
     document.getElementById("progress-value").addEventListener("animationend", function end() {
         // Hide progress-bar div element
         document.getElementById("progress").style.visibility = "hidden";
+
+        // Show #body
         document.getElementById("body").style.visibility = "visible";
+
+        // Start glitch Annim
         setup_glitch();
         start_glitch();
     });
