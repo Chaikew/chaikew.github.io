@@ -1,3 +1,13 @@
+document.onready = function (fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+};
+
 function checkIE() {
     let isIE = /MSIE|Triden/.test(navigator.userAgent);
     if (isIE) {
@@ -21,19 +31,4 @@ function updateNav() {
 
 document.onready(function() {
     checkIE();
-    document.getElementById("body").style.visibility = "hidden";
-
-    //Standard syntax
-    // Listener : "end of progress-bar animation"
-    document.getElementById("progress-value").addEventListener("animationend", function end() {
-        // Hide progress-bar div element
-        document.getElementById("progress").style.visibility = "hidden";
-
-        // Show #body
-        document.getElementById("body").style.visibility = "visible";
-
-        // Start glitch Annim
-        setup_glitch();
-        start_glitch();
-    });
 });
