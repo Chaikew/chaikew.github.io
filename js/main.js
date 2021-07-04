@@ -8,27 +8,16 @@ document.onready = function (fn) {
     }
 };
 
-function checkIE() {
+document.onready(function() {
+    // check if browser is IE
     let isIE = /MSIE|Triden/.test(navigator.userAgent);
     if (isIE) {
+        // clear document
         document.open();
         document.close();
 
+        // show a beautiful message to tell user that his browser is outdated
         top.document.title = "Oops";
         top.document.body.innerHTML = "<p>IE is not supported !!!<br>Please upgrade your browser !</p>";
     }
-}
-
-/* Function to handle Left-Side menu */
-function updateNav() {
-    let sideNavMenu =  document.getElementById("sideNavMenu");
-    if (sideNavMenu.style.width === "260px") {
-        sideNavMenu.style.width = "0px";
-    } else {
-        sideNavMenu.style.width = "260px";
-    }
-}
-
-document.onready(function() {
-    checkIE();
 });
