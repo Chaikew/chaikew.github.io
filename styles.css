@@ -79,6 +79,7 @@ main {
   }
 }
 
+/* =============== Github Button (link to my profile) ===============*/
 #githubBtn {
   color: white;
   background-color: black;
@@ -90,6 +91,7 @@ main {
 #githubBtn svg {
   color: white;
 }
+
 
 /* =============== Tos ===============*/
 #tos {

@@ -4,12 +4,9 @@ String.prototype.removeLast = function (text) {
     if (textLength === 0) return this;
 
     let start = originLen - textLength;
-    if (start < 0) {
-        return this;
-    }
-    if (start === 0) {
-        return "";
-    }
+    if (start < 0) return this;
+    if (start === 0) return "";
+
     let i;
     let k;
     for (i = start; i >= 0; i--) {
@@ -80,7 +77,7 @@ function updateElements() {
             link.className = count % 2 === 0 ? "dark" : "light";
 
             let clickable = document.createElement("A");
-            clickable.href = `${current_path.replace("maven/", "")}${dir}`; // replace nedded or it'll result in maven/maven/fr/...
+            clickable.href = `${current_path.replace("maven/", "")}${dir}`; // replace needed or it'll result in maven/maven/fr/...
             clickable.innerHTML = `${dir}`;
             clickable.download = `${dir}`;
 
