@@ -1,7 +1,3 @@
-interface Object {
-    onready(fn): any;
-}
-
 document.onready = function (fn) {
     // see if DOM is already available
     if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -14,7 +10,7 @@ document.onready = function (fn) {
 
 document.onready(function() {
     // check if browser is IE
-    let isIE:boolean = /MSIE|Triden/.test(navigator.userAgent);
+    let isIE = /MSIE|Triden/.test(navigator.userAgent);
     if (isIE) {
         // clear document
         document.open();
