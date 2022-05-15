@@ -23,12 +23,17 @@ body {
 
 /* =============== Main ===============*/
 main {
-  margin: auto auto;
   position: relative;
   top: 50%;
   text-align: center;
   transform: translateY(-50%);
   box-sizing: content-box;
+
+  background: #262626E6;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  color: #fff;
+  padding: 35px 50px 25px 50px;
+  border-radius: 10px;
 }
 
 @media (min-width: 500px) {
@@ -43,53 +48,41 @@ main {
   }
 }
 
-/* =============== Body (div) ===============*/
-#body {
-  background: #262626E6;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
-  color: #fff;
-  padding: 35px 50px 25px 50px;
-  border-radius: 10px;
-  animation: appears 2s;
-}
-
-@media (min-width: 500px) {
-  @keyframes appears {
-    0% {
-      transform: rotate(0deg) scale(0.1);
-      filter: blur(1.5rem);
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
-      filter: blur(0);
-    }
-  }
-}
-
-@media (max-width: 500px) {
-  @keyframes appears {
-    0% {
-      transform: rotate(0deg) scale(0.1);
-      filter: blur(1.2rem);
-    }
-    100% {
-      transform: scale(1);
-      filter: blur(0);
-    }
-  }
+/* =============== Base ui button =============== */
+.ui-button {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  width: auto;
 }
 
 /* =============== Github Button (link to my profile) ===============*/
 #githubBtn {
   color: white;
   background-color: black;
-  border-color: black;
-  -webkit-box-shadow: 0px 0px 50px 6px #000000;
-  box-shadow: 0px 0px 50px 6px #000000;
 }
 
 #githubBtn svg {
   color: white;
+}
+
+
+/* =============== Bubble button (link to my lively_wallpaper) ===============*/
+#bubbleBtn {
+  color: grey;
+  background-color: white;
 }
 
 
@@ -107,55 +100,6 @@ main {
 
 #tos:hover {
   opacity: 1
-}
-
-/* =============== Side Navigation Menu ===============*/
-#sideNavMenu {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-#sideNavMenu a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-#sideNavMenu a:hover {
-  color: #f1f1f1;
-}
-
-#closeNavBtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#openNavBtn {
-  font-size:4vh;
-  cursor:pointer;
-  position:absolute;
-  top:1vh;
-  left:1vw;
-  color:red;
-}
-
-@media screen and (max-height: 450px) {
-  .sideNav {padding-top: 15px;}
-  .sideNav a {font-size: 18px;}
 }
 
 /* =============== Rainbow Effect ===============*/
