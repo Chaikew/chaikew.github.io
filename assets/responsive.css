@@ -1,0 +1,13 @@
+@media (min-width: 550px) {
+    body > main#main {
+        width: 350px;
+    }
+}
+
+
+@media (max-width: 550px) {
+    body > main#main {
+        width: 70%;
+        margin: 0 10px; /* left~right = 10px */
+    }
+}
