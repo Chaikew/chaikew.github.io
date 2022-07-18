@@ -13,24 +13,33 @@
         <meta property="og:type" content="website">
         <meta name="theme-color" content="#8536c2">
 
-        <title>JMRaichDev - OxO</title>
+        <title>JMRaichDev - OxO</title> <!-- Website title -->
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
-        <link href="./assets/styles.css" rel="stylesheet">
-        <link href="./assets/responsive.css" rel="stylesheet">
+        <!--=========== Stylesheets ===============-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet"> <!-- Montserrat Font -->
+        <link href="./assets/css/styles.css" rel="stylesheet"> <!-- Main CSS -->
+        <link href="./assets/css/responsive.css" rel="stylesheet"> <!-- Responsive CSS -->
     </head>
     <body>
+        <!-- Background canvas (for Bubble.js) -->
         <canvas id="bubbles"></canvas>
-        <main id="main">
-            <div id="main-text">
-                Hi! I'm JMRaichDev. A french (novice) developer and reverse-engineer.
-            </div>
-            <div id="technologies">
-                <div data-icon="html"></div>
-                <div data-icon="css"></div>
-                <div data-icon="js"></div>
-            </div>
-        </main>
+
+        <!-- Main container -->
+        <div id="container">
+            <!-- Main -->
+            <main>
+                <span class="text">Hi! I'm JMRaichDev. A french (novice) developer and reverse-engineer.</span>
+            </main>
+
+            <br>
+
+            <!-- Footer -->
+            <footer>
+                <span class="italic text-smaller">I wrote <span class="bold text-smaller">Bubble.js</span> (the background) ^-^</span>
+            </footer>
+        </div>
+
+        <!-- load the main script -->
         <script type="module" src="./assets/js/main.js"></script>
     </body>
 </html>

@@ -1,9 +1,9 @@
 import Bubble from "./Bubble.js";
-import { FpsControllingMode } from "./Enums.js";
 
 import bubbles_theme from "./theme.js";
 
-import { clearCanvas } from "./Utils.js";
+import {clearCanvas} from "./Utils.js";
+import {AnimationFrame} from "./AnimationUtils.js";
 
 class BubbleEngine {
     /**
@@ -38,21 +38,15 @@ class BubbleEngine {
 
     /**
      * The handle of the last animation frame.
-     * @type {number}
+     * @type {AnimationFrame}
      */
-    #animation_handle;
+    #animation_frame;
 
     /**
      * The fps of the engine.
      * @type {number}
      */
     #fps;
-
-    /**
-     * The fps controlling mode.
-     * @type {"ENGINE"|"BROWSER"}
-     */
-    #fsp_controlling_mode;
 
     /**
      * Whether the engine.setup() method has been called or not.
@@ -80,7 +74,7 @@ class BubbleEngine {
         this.#bubble_canvas = canvas;
         this.#bubble_canvas_ctx = this.#bubble_canvas.getContext("2d");
 
-        this.#animation_handle = 0;
+        this.#animation_frame = 0;
 
         this.#fps = fps;
 
@@ -103,11 +97,9 @@ class BubbleEngine {
     /**
      * Set-ups the engine
      * @param {boolean} shouldHandleCanvasResolution - whether the canvas resolution should be handled by the engine or not
-     * @param {"ENGINE"|"BROWSER"} fpsControllingMode - the fps controlling mode
      */
     setup({
       shouldHandleCanvasResolution,
-      fpsControllingMode
     }) {
         if (this.#has_been_setup) {
             console.warn("This BubbleEngine has already been setup! Ignoring...");
@@ -121,9 +113,6 @@ class BubbleEngine {
 
             this.#resizeCanvas(); // call it once to set the initial size (full screen)
         }
-
-        this.#fsp_controlling_mode = fpsControllingMode??FpsControllingMode.ENGINE;
-
 
         // create the bubble.js
         for (let i = 0; i < bubbles_theme.numberOfBubbles; i++) {
@@ -149,12 +138,6 @@ class BubbleEngine {
             for (let i = 0; i < this.#bubble_instances.length; i++) {
                 this.#bubble_instances[i].tick();
             }
-
-            if (this.#fsp_controlling_mode === FpsControllingMode.BROWSER) {
-                this.#animation_handle = window.requestAnimationFrame(this.#draw.bind(this));
-            } else {
-                this.#engine_rendering_handle = setTimeout(this.#draw.bind(this), 1000 / this.#fps);
-            }
         }
     }
 
@@ -165,7 +148,10 @@ class BubbleEngine {
         if (!this.#is_running) {
             this.#is_running = true;
 
-            this.#animation_handle = window.requestAnimationFrame(this.#draw.bind(this));
+
+            //this.#animation_frame = window.requestAnimationFrame(this.#draw.bind(this));
+            this.#animation_frame = new AnimationFrame(this.#fps, this.#draw.bind(this));
+            this.#animation_frame.start();
 
             if (!this.#all_bubbles_are_shown) {
                 let index = 0;
@@ -189,7 +175,7 @@ class BubbleEngine {
     stop() {
         if (this.#is_running) {
             this.#is_running = false;
-            window.cancelAnimationFrame(this.#animation_handle);
+            this.#animation_frame.stop();
             clearTimeout(this.#engine_rendering_handle);
         }
     }

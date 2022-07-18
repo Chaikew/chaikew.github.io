@@ -15,8 +15,8 @@ body > canvas#bubbles {
     margin: 0;
 }
 
-/* main */
-body > main#main {
+/* container */
+body > div#container {
     position: absolute;
     align-self: center;
 
@@ -27,13 +27,31 @@ body > main#main {
 
     padding: 15px 25px;
 
-    background: white;
+    background-color: rgba(0, 0, 0, 0.859);
+
     border-radius: 11px;
 }
 
-body > main#main > div#main-text {
-    font-size: 1.5rem;
-    font-weight: 600;
+span.text,
+span.text-smaller {
     font-family: 'Montserrat', sans-serif;
-    color: black;
+    color: white;
+}
+
+span.text {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+span.text-smaller {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+span.italic {
+    font-style: italic;
+}
+
+span.bold {
+    font-weight: 800;
 }
