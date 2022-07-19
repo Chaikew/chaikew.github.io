@@ -1,17 +1,25 @@
 import BubbleEngine from "./lib/bubble.js/BubbleEngine.js";
+import { onReady, onVisibilityChange } from "./lib/bubble.js/Utils.js";
 
-import { on_ready, on_visibility_change } from "./lib/bubble.js/Utils.js";
-
-
-
-on_ready(function() {
+/**
+ * The main function of the website.
+ */
+function main() {
+    /**
+     * The BubbleEngine instance.
+     * @type {BubbleEngine}
+     */
     let engine = new BubbleEngine(document.getElementById('bubbles'), 60);
-    engine.setup({
-        shouldHandleCanvasResolution: true,
-    });
-    engine.start();
 
-    on_visibility_change(function(isHidden) {
+    // set up the engine
+    engine.setup({
+        shouldHandleCanvasResolution: true, // tell the engine to handle the canvas resolution (auto-resize)
+    });
+
+    engine.start(); // start the engine
+
+    // set up the visibility change listener (to pause the engine when the tab is not visible)
+    let eventListenerSet = onVisibilityChange(function(isHidden) {
         if (!isHidden) {
             console.debug("Page shown! Resuming engine...");
             engine.start();
@@ -21,5 +29,8 @@ on_ready(function() {
         }
     });
 
+    // if the listener fails to set up, show an error message
+    if (!eventListenerSet) console.error("Could not add event listener for visibility change!");
+}
 
-});
+onReady(main.bind(this));

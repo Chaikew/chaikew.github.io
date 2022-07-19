@@ -1,6 +1,6 @@
 /*
 // old theme
-const bubbles_theme = {
+const bubblesTheme = {
     numberOfBubbles: 100,
     bubbleSpawnInterval: 55,
     clearIntensity: 33,
@@ -12,7 +12,7 @@ const bubbles_theme = {
     ballMaxVelocityY: 7,
 };*/
 
-const bubbles_theme = {
+const bubblesTheme = {
     numberOfBubbles: // number of bubbles to fill the screen / 6
         Math.floor(
             (
@@ -32,6 +32,6 @@ const bubbles_theme = {
     ballMaxVelocityX: 5,
     ballMinVelocityY: 2,
     ballMaxVelocityY: 7
-}
+};
 
-export default bubbles_theme;
+export default bubblesTheme;

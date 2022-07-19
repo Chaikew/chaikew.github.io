@@ -1,3 +1,6 @@
+/**
+ * A class to handle timed animations.
+ */
 class AnimationFrame {
     /**
      * AnimationFrame constructor

@@ -1,4 +1,4 @@
-import bubbles_theme from "./theme.js";
+import bubblesTheme from "./theme.js";
 import { DrawingModes } from "./Enums.js";
 
 import { randomIntFromInterval } from "../../utils/MathHelper.js";
@@ -20,7 +20,7 @@ class Bubble {
      * The id of the bubble.
      * @type {number}
      */
-    #bubble_id;
+    #bubbleId;
 
     /**
      * The bubble drawing mode (Fill or Stroke).
@@ -66,24 +66,27 @@ class Bubble {
 
     /**
      * The constructor of the Bubble class.
-     * @param {HTMLCanvasElement} canvas The canvas element to draw the bubble on.
-     * @param {CanvasRenderingContext2D} ctx The canvas context to draw the bubble on.
-     * @param {number} bubble_id The id of the bubble.
+     * @param {HTMLCanvasElement} canvas - the canvas element to draw the bubble on.
+     * @param {CanvasRenderingContext2D} ctx - the canvas context to draw the bubble on.
+     * @param {number} bubbleId - the id of the bubble.
      */
-    constructor(canvas, ctx, bubble_id) {
+    constructor(canvas, ctx, bubbleId) {
         this.#canvas = canvas;
         this.#ctx = ctx;
 
-        this.#bubble_id = bubble_id;
+        this.#bubbleId = bubbleId;
 
         this.#drawingMode = randomIntFromInterval(1, 2) === 1 ? DrawingModes.FILL : DrawingModes.STROKE;
-        this.#vx = randomIntFromInterval(bubbles_theme.ballMinVelocityX, bubbles_theme.ballMaxVelocityX);
-        this.#vy = randomIntFromInterval(bubbles_theme.ballMinVelocityY, bubbles_theme.ballMaxVelocityY);
-        this.#radius = randomIntFromInterval(bubbles_theme.ballMinRadius, bubbles_theme.ballMaxRadius);
+        this.#vx = randomIntFromInterval(bubblesTheme.ballMinVelocityX, bubblesTheme.ballMaxVelocityX);
+        this.#vy = randomIntFromInterval(bubblesTheme.ballMinVelocityY, bubblesTheme.ballMaxVelocityY);
+        this.#radius = randomIntFromInterval(bubblesTheme.ballMinRadius, bubblesTheme.ballMaxRadius);
         this.#visible = false;
     }
 
-    #randomTeleport() { // TODO: fix bubble.js getting out of bounds when showBubble() is called
+    /**
+     * Teleports the bubble to a random location.
+     */
+    #randomTeleport() { // TODO: fix bubble getting (sometimes) out of bounds when showBubble() is called
         this.#x = randomIntFromInterval(this.#canvas.height / (6 + randomIntFromInterval(3, 11)), this.#canvas.height / 2);
         this.#y = randomIntFromInterval(this.#canvas.width / (7 + randomIntFromInterval(2, 13)), this.#canvas.width / 2);
     }
@@ -159,15 +162,15 @@ class Bubble {
             this.draw();
 
             // check if the bubble is out of bounds
-            let max_tolerance = this.#radius * 2; // the tolerance is the diameter of the bubble
+            let maxTolerance = this.#radius * 2; // the tolerance is the diameter of the bubble
             if (
-                (this.#y - max_tolerance) > this.#canvas.height ||
-                (this.#y + max_tolerance) < 0 ||
-                (this.#x - max_tolerance) > this.#canvas.width ||
-                (this.#x + max_tolerance) < 0
+                (this.#y - maxTolerance) > this.#canvas.height ||
+                (this.#y + maxTolerance) < 0 ||
+                (this.#x - maxTolerance) > this.#canvas.width ||
+                (this.#x + maxTolerance) < 0
             ) {
                 // if the bubble is out of bounds, teleport it back into the bounds
-                console.debug(`Bubble #${this.#bubble_id} out of bounds! random teleporting...`);
+                console.debug(`Bubble #${this.#bubbleId} out of bounds! random teleporting...`);
                 this.#randomTeleport();
             } else {
                 // if the bubble is in bounds, move it
