@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "rules": {
+    "camelcase": "error",
+    "valid-jsdoc": [ "error", {
+      "requireReturn": false,
+      "requireReturnDescription": false,
+      "requireParamDescription": true,
+      "prefer": {
+        "return": "returns"
+      }
+    }],
+    "require-jsdoc": ["error", {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": true,
+        "ClassDeclaration": true,
+        "ArrowFunctionExpression": true,
+        "FunctionExpression": true
+      }
+    }],
+    "no-unused-vars": "error",
+    "no-restricted-syntax": [ "error",
+      "ForInStatement", "ForOfStatement", "LabeledStatement", "WithStatement"
+    ],
+    "object-curly-spacing": ["error",
+      "always"
+    ],
+    "semi": ["error", "always"]
+  }
+}
