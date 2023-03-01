@@ -21,10 +21,10 @@ const bubblesTheme = {
                 ) / (
                     Math.PI * (32**2 /* ballMaxRadius² */) // max area of a ball
                 )
-            ) / 6 // for each 5 possible bubbles, we put one
+            ) / 8 // for each 8 possible bubbles, we put one
         )
         ,
-    bubbleSpawnInterval: 55,
+    bubbleSpawnInterval: 105,
     clearIntensity: 33,
     ballMinRadius: 12,
     ballMaxRadius: 32,
